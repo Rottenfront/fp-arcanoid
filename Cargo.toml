@@ -1,0 +1,34 @@
+[package]
+name = "fp-arcanoid"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+vello = { version = "0.3", features = [
+    "buffer_labels",
+    "debug_layers",
+    "hot_reload",
+    "wgpu-profiler",
+] }
+vello_shaders = { version = "0.3", features = ["compile"] }
+vello_encoding = "0.3"
+
+anyhow = "1.0"
+pollster = "0.3"
+wgpu-profiler = "0.18"
+
+winit = "0.30.3"
+log = "0.4"
+
+# We're still using env-logger, but we want to use tracing spans to allow using
+# tracing_android_trace
+tracing = { version = "0.1.40", features = ["log-always"] }
+
+notify-debouncer-mini = "0.5"
+env_logger = "0.11.3"
+image = { version = "0.25", features = ["jpeg"] }
+rand = "0.8.5"
+
+# for pico_svg
+roxmltree = "0.20.0"
